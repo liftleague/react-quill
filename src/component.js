@@ -36,6 +36,7 @@ var QuillComponent = React.createClass({
 		formats: T.array,
 		styles: T.oneOfType([ T.object, T.oneOf([false]) ]),
 		theme: T.string,
+		placeholder: T.string,
 		pollInterval: T.number,
 		onKeyPress: T.func,
 		onKeyDown: T.func,
@@ -55,6 +56,7 @@ var QuillComponent = React.createClass({
 		'formats',
 		'styles',
 		'theme',
+		'placeholder',
 		'pollInterval'
 	],
 
@@ -169,6 +171,7 @@ var QuillComponent = React.createClass({
 		var config = {
 			readOnly:     this.props.readOnly,
 			theme:        this.props.theme,
+			placeholder:  this.props.placeholder,
 			// Let Quill set the defaults, if no formats supplied
 			formats:      this.props.formats ? [] : undefined,
 			styles:       this.props.styles,
